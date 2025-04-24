@@ -1,0 +1,12 @@
+debug: false
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kotlin-app
+    username: postgres
+  flyway:
+    locations: classpath:db/migration
+    enabled: true
+
+logging:
+  level:
+    org.flywaydb: DEBUG
