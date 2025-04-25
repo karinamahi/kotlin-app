@@ -7,6 +7,6 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class HelloRoute: RouteBuilder() {
     override fun configure() {
-        from("timer:hello?period=1s").log("hello")
+//        from("timer:hello?period=1s").log("hello")
     }
 }

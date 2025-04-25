@@ -27,6 +27,13 @@ dependencies {
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
+    testImplementation("org.testcontainers:postgresql")
+    testImplementation("org.testcontainers:junit-jupiter")
 }
 
 application {
@@ -38,4 +45,8 @@ flyway {
     user="postgres"
     schemas= arrayOf("public")
     locations= arrayOf("classpath:db/migration")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
